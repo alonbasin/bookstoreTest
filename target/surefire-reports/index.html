@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,12 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="bookstore.BookstoreTest" hash-for-method="simplePutTest">simplePutTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="bookstore.BookstoreTest" hash-for-method="getTest">getTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="bookstore.BookstoreTest" hash-for-method="putTest">putTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Surefire_suite -->
@@ -124,9 +129,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="simplePutTest">
-                  </a> <!-- simplePutTest -->
-                  <span class="method-name">simplePutTest</span>
+                  <a name="getTest">
+                  </a> <!-- getTest -->
+                  <span class="method-name">getTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putTest">
+                  </a> <!-- putTest -->
+                  <span class="method-name">putTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -182,16 +194,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'simplePutTest')
+data.setCell(0, 1, 'putTest')
 data.setCell(0, 2, 'bookstore.BookstoreTest')
-data.setCell(0, 3, 1787);
+data.setCell(0, 3, 2782);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getTest')
+data.setCell(1, 2, 'bookstore.BookstoreTest')
+data.setCell(1, 3, 2266);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -223,12 +239,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">simplePutTest</span>
-                <span class="method-start">286 ms</span>
+                <span class="method-name">getTest</span>
+                <span class="method-start">312 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putTest</span>
+                <span class="method-start">2579 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">2075 ms</span>
+                <span class="method-start">5363 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

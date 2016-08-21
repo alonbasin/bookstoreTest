@@ -1,88 +1,73 @@
 package bookstore;
 
+import static com.jayway.restassured.RestAssured.get;
+import static com.jayway.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.google.gson.JsonObject;
 import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.response.Response;
 import com.jayway.restassured.response.ValidatableResponse;
-
-import org.testng.annotations.BeforeTest;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import static com.jayway.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*; 
-
-import java.net.URL;
 
 public class BookstoreTest {
   
-	private Book mBook;
-	private Response mRespone;
+//	private Book mBook;
+//	private Response mRespone;
+	private String bookId = "57b95ec7b0bbb2d4cc4ff33e";
 
 	
 	@Test ( priority = 1 )
-  public void getTest() {
-		String bookId = "57b2c72280bc48bedbb59319";
-		ValidatableResponse response = get("/books/" + bookId).
+	public void getTest() {
+		getBookData(bookId);
+	}
+	
+	@Test ( priority = 2)
+	public void putTest() {
+		putBookData(bookId);
+		
+		ValidatableResponse respone = getBookData(bookId);
+		respone.
+		assertThat().
+			body("title", equalTo("foo")).
+		and().
+			body("desc", equalTo("bar"));
+	}
+	
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("start");
+		RestAssured.baseURI = "https://bookstore2-abtd.c9users.io/api";
+	}
+
+	@AfterTest
+	public void afterTest() {
+		
+	}
+	
+	////////////////////////////////////
+	///////////help functions///////////
+	
+	public ValidatableResponse getBookData(String bookId) {
+		return get("/books/" + bookId).
 		then().
 			assertThat().statusCode(200).
 		and().
 			assertThat().body("title", not(equalTo(null))).
 		and().
-			assertThat().body("description", not(equalTo(null)));
-  }
-	
-	@Test ( priority = 2)
-	public void putTest() {
-		getBookData("57b2c72280bc48bedbb59319");
-		String title = mRespone.getBody().jsonPath().getString("title");
-		String description = mRespone.getBody().jsonPath().getString("description");
-		mBook = new Book(title, description);
-//		Assert.assertEquals(c, "1");
-		putBookData("57b2c72280bc48bedbb59319");
-		
-		getBookData("57b2c72280bc48bedbb59319");
-		String title1 = mRespone.getBody().jsonPath().getString("title");
-		System.out.println(title1);
-	}
-	
-	
-  
-	@BeforeTest
-  public void beforeTest() {
-	System.out.println("start");
-	RestAssured.baseURI = "https://bookstore-abtd.c9users.io/api";
-  }
-
-  
-	@AfterTest
-  public void afterTest() {
-		
-  }
-	
-	
-	
-	public void getBookData(String bookId) {
-	 	mRespone = given().
-			contentType("application/json").
-			when().
-			get("/books/" + bookId).
-			then().
-			statusCode(200).
-			extract().response();	
+			assertThat().body("desc", not(equalTo(null)));
 	}
 	
 	public void putBookData(String bookId) {
 		given().
-			param("title", "test").
-			param("description", "test2").
+		request().
+			header("Content-Type", "application/json").
+		and().
+			body("{\"title\": \"foo\",\"desc\": \"bar\"}").
 		when().
-			put("/books/" + bookId).
-		then().
-			body(containsString("OK"));
+			put("/books/" + bookId);
 	}
 
 }

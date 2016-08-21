@@ -6,8 +6,8 @@
       <class name="bookstore.BookstoreTest">
         <methods>
           <include name="beforeTest"/>
+          <include name="putTest"/>
           <include name="afterTest"/>
-          <include name="getTest"/>
         </methods>
       </class> <!-- bookstore.BookstoreTest -->
     </classes>
