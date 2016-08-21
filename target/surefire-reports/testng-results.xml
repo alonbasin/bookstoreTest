@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="3478" started-at="2016-08-21T14:05:36Z" finished-at="2016-08-21T14:05:40Z">
+  <suite name="Surefire suite" duration-ms="3922" started-at="2016-08-21T14:41:01Z" finished-at="2016-08-21T14:41:05Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="3478" started-at="2016-08-21T14:05:36Z" finished-at="2016-08-21T14:05:40Z">
+    <test name="Surefire test" duration-ms="3922" started-at="2016-08-21T14:41:01Z" finished-at="2016-08-21T14:41:05Z">
       <class name="bookstore.BookstoreTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:bookstore.BookstoreTest@90f6bfd]" name="beforeTest" is-config="true" duration-ms="301" started-at="2016-08-21T17:05:36Z" finished-at="2016-08-21T17:05:37Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:bookstore.BookstoreTest@90f6bfd]" name="beforeTest" is-config="true" duration-ms="298" started-at="2016-08-21T17:41:01Z" finished-at="2016-08-21T17:41:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="getTest()[pri:1, instance:bookstore.BookstoreTest@90f6bfd]" name="getTest" duration-ms="2151" started-at="2016-08-21T17:05:37Z" finished-at="2016-08-21T17:05:39Z">
+        <test-method status="PASS" signature="getTest()[pri:1, instance:bookstore.BookstoreTest@90f6bfd]" name="getTest" duration-ms="2194" started-at="2016-08-21T17:41:01Z" finished-at="2016-08-21T17:41:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTest -->
-        <test-method status="PASS" signature="putTest()[pri:2, instance:bookstore.BookstoreTest@90f6bfd]" name="putTest" duration-ms="1016" started-at="2016-08-21T17:05:39Z" finished-at="2016-08-21T17:05:40Z">
+        <test-method status="PASS" signature="putTest()[pri:2, instance:bookstore.BookstoreTest@90f6bfd]" name="putTest" duration-ms="1422" started-at="2016-08-21T17:41:04Z" finished-at="2016-08-21T17:41:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- putTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:bookstore.BookstoreTest@90f6bfd]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-08-21T17:05:40Z" finished-at="2016-08-21T17:05:40Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:bookstore.BookstoreTest@90f6bfd]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-08-21T17:41:05Z" finished-at="2016-08-21T17:41:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
