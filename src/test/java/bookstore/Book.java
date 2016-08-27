@@ -2,11 +2,13 @@ package bookstore;
 
 public class Book {
 	
+	String id;
 	String title;
 	String description;
 	
-	public Book(String title, String description) {
+	public Book(String id, String title, String description) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.description = description;
 	}
